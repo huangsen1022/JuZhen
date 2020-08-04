@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/mvc 
+	http://www.springframework.org/schema/mvc/spring-mvc.xsd
+	">
+	<!-- Spring的核心配置 -->
+	<import resource="classpath:applicationContext.xml" />
+	<!-- IoC注解解析器配置 -->
+    <context:component-scan base-package="hua"/>
+	<!--springMVC的注解解析器配置 -->
+	<mvc:annotation-driven/>
+	<!-- 静态资源处理器配置 -->
+	<mvc:default-servlet-handler/>
+	<mvc:resources location="/WEB-INF/file/" mapping="/file/*"/>
+	<mvc:resources location="/WEB-INF/images/" mapping="/images/*"/>
+	<!--拦截器配置-->
+<!--	<mvc:interceptors>-->
+<!--		<mvc:interceptor>-->
+<!--			<mvc:mapping path="/forum/user/*"/>-->
+<!--			<bean class="srt.gzu.hua.util.interceptor.check_login_user"/>-->
+<!--		</mvc:interceptor>-->
+<!--	</mvc:interceptors>-->
+</beans>

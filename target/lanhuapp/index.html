@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME</title>
+    <link rel="stylesheet" href="/static/webuploader/webuploader.css"/>
+    <script type="text/javascript" src="/static/js/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="/static/webuploader/webuploader.min.js"></script>
+    <script type="text/javascript" src="/static/js/util.js"></script>
+    <script type="text/javascript" src="/static/js/md5.min.js"></script>
+</head>
+<body>
+<div>
+    <div id="filePicker">更换</div>
+    <div class="my-base-info-data-line-null"></div>
+</div>
+<script type="text/javascript" src="/static/js/uploader.js"></script>
+<script>
+    $(function () {
+        upImg();
+        console.log(5555);
+        $.post("/lan/addConsult",{'title':"meng",'content':'999999','img':"1.jpg"},
+            function(data){
+                alert(data['msg']);
+        });
+    });
+</script>
+</body>
+</html>
